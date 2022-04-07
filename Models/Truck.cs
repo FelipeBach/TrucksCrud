@@ -13,7 +13,13 @@ namespace TruckCrud.Models
         public int ManufectureYear { get; set; } = DateTime.Now.Year;
         [Required]
         [Display(Name = "Model Year")]
-        public int ModelYear { get; set; }
+        public int ModelYear { get; set; }  
+        
+        [Display(Name = "Vehicle Plate")]
+        public string Plate { get; set; }
+        
+        [Required]
+        public int RegisterNumber { get; set; }
 
         public IEnumerable<ValidationResult> Validate(
         ValidationContext validationContext)

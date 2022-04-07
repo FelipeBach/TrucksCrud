@@ -39,7 +39,7 @@ namespace TruckCrud.Controllers
         
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddOrEdit([Bind("Id,Model,ManufectureYear,ModelYear")] Truck truck)
+        public async Task<IActionResult> AddOrEdit([Bind("Id,Model,ManufectureYear,ModelYear,Plate,RegisterNumber")] Truck truck)
         {
             if (ModelState.IsValid)
             {
@@ -47,16 +47,7 @@ namespace TruckCrud.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View(truck);
-        }
-              
-        //public async Task<IActionResult> Delete(int id)
-        //{
-        //    var dbTruck = await _context.Trucks.FindAsync(id);
-        //    _context.Trucks.Remove(dbTruck);
-        //    await _context.SaveChangesAsync();
-
-        //    return RedirectToAction(nameof(Index));
-        //}
+        }                      
 
         public async Task<IActionResult> Delete(int id)
         {
